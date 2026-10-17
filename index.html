@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taha Canturk – Systems, Security & Motor-Control Engineer</title>
+<meta name="description" content="Computer Engineering student at the University of Waterloo building systems software, cryptography and motor-control test automation. Open to 2027 internships in New York and San Francisco.">
+<meta name="theme-color" content="#11181d">
+<link rel="canonical" href="https://kibnakamoto.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taha Canturk: systems, cryptography and motor-control software">
+<meta property="og:description" content="Open to 2027 internships in New York and San Francisco. 4x dyno torque capacity, 10x faster data logging, a cipher with a live demo.">
+<meta property="og:image" content="https://kibnakamoto.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+<style>
+:root{
+  --bg:#f3f5f4; --ink:#16212b; --muted:#56646f; --line:#cfd8d6; --accent:#0a6a8a; --hl:#fde9a8; --panel:#e8eeed;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11181d; --ink:#e6ecea; --muted:#9aa9b0; --line:#2b3a42; --accent:#5cc3e4; --hl:#5a4a12; --panel:#192329;}}
+:root[data-theme="dark"]{--bg:#11181d; --ink:#e6ecea; --muted:#9aa9b0; --line:#2b3a42; --accent:#5cc3e4; --hl:#5a4a12; --panel:#192329;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+header.top strong{font-family:var(--serif);font-size:1.1rem}
+nav a{margin-left:8px;padding:10px 6px;display:inline-block;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:2px 10px;margin-left:20px}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+h1{font:600 clamp(2.2rem,5vw,3.4rem)/1.1 var(--serif);margin:0 0 20px;letter-spacing:-.01em}
+.hero p{max-width:34em;color:var(--muted);margin:0 0 20px}
+.links a{margin-right:20px;font-weight:600}
+.demo{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;font-size:.9rem}
+.demo h2{font:600 1rem var(--sans);margin:0 0 4px}
+.demo p{font-size:.85rem;margin:0 0 12px}
+.row{font:.85rem/1.6 var(--mono);display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0 10px;margin-bottom:10px}
+.cap{color:var(--muted);font-size:.8rem;margin:0 0 2px}
+select{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.row span{padding:0 4px;border-radius:3px}
+.row span.d{background:var(--hl)}
+.demo .meta{margin:12px 0;font-size:.9rem}
+.demo button{background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:6px 14px;margin-right:8px}
+.demo button.alt{background:none;color:var(--ink);border:1px solid var(--line)}
+.num{font:.8rem/1.4 var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;margin:4px 0 8px;white-space:pre}
+.calc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin:20px 0}
+.calc label{display:inline-block;margin:0 16px 8px 0;color:var(--muted);font-size:.9rem}
+.calc input{font:inherit;width:11em;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:3px 8px;display:block}
+.calc p{margin:6px 0 0}
+#research ul{padding-left:1.1em;max-width:70ch}#research li{margin-bottom:10px}#research .lede{max-width:66ch}
+.case{margin:0 0 56px}.case h3{font:600 1.35rem var(--serif);margin:0 0 6px}.case p{max-width:68ch;margin:0 0 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin:8px 0 40px}
+.stat{border-top:2px solid var(--accent);padding-top:8px}.stat b{display:block;font:600 1.7rem/1.2 var(--serif)}.stat span{color:var(--muted);font-size:.85rem}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0;align-items:start}
+.figs figure{margin:0}.figs img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+figcaption{color:var(--muted);font-size:.85rem;margin-top:6px;max-width:60ch}
+.sub{color:var(--muted);margin:-8px 0 24px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;background:var(--ink);color:var(--bg)!important;text-decoration:none;font-weight:600;margin:0 10px 10px 0}
+.btn.alt{background:none;color:var(--ink)!important;border:1px solid var(--line)}
+.hero p.avail{color:var(--ink);font-weight:600}
+.proof{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 20px}
+.proof a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);font-size:.95rem;padding:6px 0;display:inline-block}
+.prow{display:grid;grid-template-columns:1.1fr 1.7fr 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.prow a{font-weight:600}.prow .tech{display:block;color:var(--muted);font-size:.85rem}.prow p{margin:0;max-width:60ch}.prow .res{font-weight:600}.prow .res.m{font-weight:400;color:var(--muted)}
+@media (max-width:760px){.prow{grid-template-columns:1fr;gap:4px}}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2.s{font:600 1.7rem var(--serif);margin:0 0 20px}
+.item{display:grid;grid-template-columns:150px 1fr;gap:24px;margin-bottom:32px}
+.when{color:var(--muted);font-size:.9rem;padding-top:4px}
+.item h3{margin:0 0 2px;font:600 1.2rem var(--serif)}
+.item .tag{color:var(--muted);font-size:.9rem;margin:0 0 8px}
+.item ul{margin:0;padding-left:1.1em}
+.item li{margin-bottom:6px;max-width:68ch}
+.skills dt{font-weight:600;margin-top:12px}
+.skills dd{margin:0;color:var(--muted)}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px}.item{grid-template-columns:1fr;gap:4px}nav a:first-child{margin-left:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <strong>Taha Canturk</strong>
+  <nav><a href="#experience">Work</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#opensource">Open source</a><a href="hobbies.html">Hands-on</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button id="theme" aria-label="Toggle light and dark theme">Theme</button></nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>I build low-level software that has to be fast and has to be right.</h1>
+    <p>Computer Engineering student at the University of Waterloo. I write C++ networking and cryptography, and Python automation that drives real motors on a dynamometer. </p>
+    <p class="avail">Open to 2027 software internships in New York and San Francisco.</p>
+    <div class="links"><a class="btn" href="assets/Taha_Canturk_Resume.pdf">Full resume (PDF)</a><a class="btn alt" href="https://github.com/kibnakamoto">GitHub</a><a class="btn alt" href="https://linkedin.com/in/taha-canturk">LinkedIn</a><a class="btn alt" href="mailto:tcanturk@uwaterloo.ca">Email</a></div>
+    <ul class="proof"><li><a href="#experience">4&times; dyno torque capacity</a></li><li><a href="#experience">10&times; faster data logging</a></li><li><a href="#research">Birthday bound solved to 200+ decimals</a></li></ul>
+  </div>
+  <div class="demo" aria-live="polite">
+    <h2>See diffusion in Full-Time-Pad</h2>
+    <p>This runs the v2.0 key transformation from my stream cipher, in your browser, on two 256-bit keys that differ by one bit.</p>
+    <div class="cap">Key A: bytes 00 01 02 &hellip; 1f, shown as 32-bit words</div><div class="row" id="rowA"></div>
+    <div class="cap">Key B, one bit flipped</div><div class="row" id="rowB"></div>
+    <div class="meta" id="meta"></div>
+    <div class="cap" id="out" style="word-break:break-all;margin-bottom:10px"></div>
+    <label class="cap" for="target">Flip a bit in the</label>
+    <select id="target"><option value="key">key</option><option value="nonce">encryption index</option></select>
+    <div style="margin-top:12px"><button id="step">Run an iteration</button><button id="all" class="alt">Run all 10</button><button id="reset" class="alt">Reset</button></div>
+  </div>
+</div>
+
+<section id="experience">
+  <h2 class="s">Work: Accelerated Systems Inc.</h2>
+  <p class="sub">Mechatronics Engineering Assistant. Co-op Apr&ndash;Aug 2026, part-time since Sep 2026. Electric-motor and EV-battery test engineering.</p>
+  <div class="stats">
+    <div class="stat"><b>4&times;</b><span>torque-testing capacity, 50 to 200 N&middot;m, after commissioning a new dynamometer</span></div>
+    <div class="stat"><b>10&times;</b><span>logging frequency: 1 s down to 100 ms intervals, with 20&times; faster controller data access</span></div>
+    <div class="stat"><b>+8%</b><span>torque per ampere, 0.180 to 0.194 N&middot;m/A, with the optimized MTPA stator angle</span></div>
+    <div class="stat"><b>10 min</b><span>for a full automated sweep (5,218 samples) that replaces hours-long manual procedures</span></div>
+  </div>
+
+  <div class="case">
+    <h3>Automated IPM motor characterization</h3>
+    <p>I wrote the software that characterizes an interior-permanent-magnet motor on the dynamometer, replacing hours-long manual procedures with an automated run that needs no operator at each point. It steps through speed, d-axis and q-axis current targets, ramps current instead of jumping so the motor never stalls, covers both motoring and regeneration, and logs torque and torque per ampere at every dwell. Runs of about 300 points generate 3D speed/torque/temperature lookup tables.</p>
+    <p>Underneath is a multithreaded Python/PySide6 framework that keeps the GUI, device management and algorithm execution separate, with watchdog monitoring, data logging and reusable test workflows, plus a calculus-based NumPy algorithm that finds the stator angle for maximum torque per ampere (MTPA). I also debugged and extended the 30,000+ line legacy Python codebase and integrated ABB ACS880 control to bring the 200 N&middot;m dynamometer online.</p>
+    <p>I also removed a long-standing data-acquisition bottleneck. Dynamometer logging had been limited to 1 s intervals for years. Integrating the controller's P-Table and optimizing the .NET API made motor-controller data access 20&times; faster, and together with Yokogawa processing improvements it enabled 100 ms logging, a 10&times; higher logging frequency.</p>
+    <p><strong>Impact:</strong> characterization went from hours of manual work to a repeatable, unattended run that produces the tables used to command accurate torque, and the optimized stator angle raised torque per ampere from 0.180 to 0.194 N&middot;m/A, about 8%.</p>
+    <div class="figs">
+      <figure><a href="assets/dyno-setup.jpg"><img src="assets/dyno-setup.jpg" width="1200" height="1600" alt="IPM motor on the dynamometer test bench" loading="lazy"></a><figcaption>The test bench: IPM motor coupled through a torque transducer to the dynamometer, with the measurement and filtering hardware around it.</figcaption></figure>
+      <figure><a href="assets/sweep-overview.png"><img src="assets/sweep-overview.png" width="1600" height="1093" alt="Ten-minute automated characterization sweep" loading="lazy"></a><figcaption>A ten-minute automated sweep: Id/Iq steps at 700 rpm, a 1000 rpm hold near 29 N&middot;m, then a 300 rpm cooldown. Torque swings positive and negative because the sweep covers motoring and regeneration, and the current is ramped so the motor does not stall.</figcaption></figure>
+    </div>
+    <div class="figs">
+      <figure><a href="assets/torque-per-amp.png"><img src="assets/torque-per-amp.png" width="1600" height="933" alt="Torque per ampere versus torque" loading="lazy"></a><figcaption>Measured torque per ampere across the load range: about 0.18 N&middot;m/A by 10 N&middot;m, a 0.19 plateau above 20 N&middot;m, and a 0.194 peak at 39 N&middot;m. The curve is the torque-ramp envelope; markers are the sweep dwell points.</figcaption></figure>
+      <figure><a href="assets/torque-speed-envelope.png"><img src="assets/torque-speed-envelope.png" width="1600" height="933" alt="Torque-speed envelope colored by torque per ampere" loading="lazy"></a><figcaption>Torque&ndash;speed envelope from a ramp down from about 2100 rpm to 700 rpm, colored by torque per ampere: 50 N&middot;m peak at 687 rpm, then a supply-limited constant-power region near 4.4 kW on a 47 V DC bench supply.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="case">
+    <h3>Rebuilt the dynamometer current-sensor wiring and tuned the power analyzer</h3>
+    <p>The four current sensors on the dynamometer's power-measurement path had been wired in a way that invited noise. I rebuilt the assembly to proper practice, with grounding and shielded cabling, then wired the three-phase voltage measurements to the Yokogawa power analyzer and configured it for more precise readings.</p>
+    <p><strong>Impact:</strong> more stable readings and more accurate numbers for every test that runs on that dyno.</p>
+    <div class="figs"><figure><a href="assets/current-sensors.jpg"><img src="assets/current-sensors.jpg" width="1600" height="1200" alt="Four blue current sensors with copper busbars and green shielded cables" loading="lazy"></a><figcaption>The four current sensors after rewiring: shielded signal cabling, grounding, and copper busbar connections.</figcaption></figure></div>
+  </div>
+
+  <div class="case">
+    <h3>Custom RC filter and enclosure to clean up speed signals</h3>
+    <p>The oscilloscope showed ringing and noise on the signals used for speed readings. I built a custom RC filter and designed its enclosure in SolidWorks, 3D printed it, and added self-tapping screw features and cable glands for the three signal leads and the input cable.</p>
+    <p><strong>Impact:</strong> a purpose-built, reusable part that damps the oscillation and reduces noise in the speed readings.</p>
+    <div class="figs">
+      <figure><a href="assets/scope-ringing.jpg"><img src="assets/scope-ringing.jpg" width="1600" height="1200" alt="Rohde and Schwarz RTB2004 oscilloscope showing ringing on the signals" loading="lazy"></a><figcaption>Oscilloscope capture (Rohde &amp; Schwarz RTB2004) of the ringing the filter was designed to remove.</figcaption></figure>
+      <figure><a href="assets/rc-filter-box.jpg"><img src="assets/rc-filter-box.jpg" width="1200" height="822" alt="3D printed enclosure with cable glands for the RC filter" loading="lazy"></a><figcaption>The 3D printed RC filter enclosure with self-tapping screw features and cable glands.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="case">
+    <h3>EV battery heater validation</h3>
+    <p>I ran thermal tests on 280 Ah EV batteries to validate a battery heater, at room temperature and in a freezer to find edge cases. I placed thermocouples and thermistors on designated parts of the battery and recorded the heating behavior with a data logger, a DC power supply, a clamp meter and a multimeter.</p>
+    <p><strong>Impact:</strong> measured heater performance from room temperature down to cold-soak conditions, including the edge cases a normal bench test would miss.</p>
+    <div class="figs"><figure><a href="assets/battery-test.jpg"><img src="assets/battery-test.jpg" width="1200" height="1600" alt="Battery test setup with oscilloscope, DC supply, multimeters and clamp meter" loading="lazy"></a><figcaption>The test setup: instrumented battery, DC supply, oscilloscope, multimeters and clamp meter.</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="other">
+  <h2 class="s">Other engineering experience</h2>
+  <div class="prow"><div><strong>Firmware Developer</strong><span class="tech">Midnight Sun Design Team, 2025</span></div><p>Wrote C smoke tests for the CAN interface of the WS22 motor controller, with message serialization built on structs and unions that handle endianness, field widths and byte order.</p><span class="res m">C, CAN, embedded</span></div>
+  <div class="prow"><div><strong>Peer Tutor</strong><span class="tech">Embedded systems and robotics</span></div><p>Taught students to wire and program servo and stepper motors on Arduino, and to debug wiring, current limits and signal timing with datasheets and multimeters.</p><span class="res m">Arduino, sensors, control basics</span></div>
+</section>
+
+<section id="projects">
+  <h2 class="s">Projects</h2>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto">Full-Time-Pad stream cipher</a><span class="tech">C++</span></div><p>256-bit stream cipher built from ARX rounds and dynamic byte permutation, in three speed and complexity variants. Live demo at the top of this page.</p><span class="res">~11&times; faster transformation (642 to 59 ms per 1M ops)</span></div>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto/TorComm">TorComm</a><span class="tech">C++23, Boost.Asio, Crypto++, Qt5</span></div><p>Encrypted peer-to-peer messenger over asynchronous TCP/IPv6 with ECDH key exchange and AES/ChaCha authenticated encryption.</p><span class="res m">Unit, regression and benchmark suites</span></div>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto/blockchain">Blockchain Network Simulator</a><span class="tech">Python</span></div><p>Peer-to-peer nodes with a mempool, concurrent mining, block propagation and proof-of-work consensus.</p><span class="res m">TCP nodes, wallet keys</span></div>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto/ECC">Elliptic Curve Cryptography library</a><span class="tech">Python</span></div><p>ECIES encryption and ECDSA signatures following SEC 1, with ECDH, HMAC, AES and HKDF.</p><span class="res m">Published on PyPI</span></div>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto/bigint">Big Integer library</a><span class="tech">C++</span></div><p>Fixed-width unsigned integers with compile-time bit sizes, 64-bit limbs and full constexpr support.</p><span class="res m">Any width, set at compile time</span></div>
+  <div class="prow"><div><a href="https://github.com/kibnakamoto/OneTimePad">Cryptanalysis CLI</a><span class="tech">C++</span></div><p>Multithreaded tool that recovers plaintext when a one-time-pad key is reused.</p><span class="res m">Concurrent, memory-safe</span></div>
+</section>
+
+<section id="research">
+  <h2 class="s">Research: collision odds at 2<sup>256</sup> scale</h2>
+  <p class="lede">How many random 256-bit values until two of them probably match? The textbook answer needs b!/(b&minus;k)! with b&nbsp;=&nbsp;2<sup>256</sup>, a number with roughly 10<sup>79</sup> digits, so it can't be computed directly. I built a solver that finds the answer anyway, then used it to test the standard closed-form shortcut against the true value.</p>
+  <div class="cap">k for a 50% collision chance, b = 2^256</div>
+  <div class="num">400651869298001176472314306405665023047.84084598971315878303207690112184941636&hellip;</div>
+  <p class="lede">That is about 1.1774 &times; 2<sup>128</sup>. It agrees with an independent gamma-function solver, run at 600-digit precision, to over 200 decimal places.</p>
+  <ul>
+    <li><strong>Method.</strong> I substituted Ramanujan's factorial approximation into the collision equation, which gives one function g(b,&nbsp;k) whose root is k. I solve it with the secant method in arbitrary-precision arithmetic (Python Decimal), starting from the classic closed-form estimate, and checked the result against a mpmath log-gamma solver.</li>
+    <li><strong>Finding.</strong> The widely used shortcut &frac12;&nbsp;+&nbsp;&radic;(&frac14;&nbsp;+&nbsp;2b&nbsp;ln&nbsp;2) overshoots by ln&nbsp;2&nbsp;/&nbsp;3 &asymp; 0.231 at every b I tested (4,000 values up to 4&times;10<sup>36</sup>). The corrected form is k &asymp; &radic;(2b&nbsp;ln&nbsp;2) + (3&minus;2&nbsp;ln&nbsp;2)/6. At b&nbsp;=&nbsp;2<sup>256</sup> the measured gap matches ln&nbsp;2&nbsp;/&nbsp;3 to 38 digits, and the remainder is the expected O(1/&radic;b) term. This agrees with the published asymptotics (D. Brink, <em>Ramanujan Journal</em>, 2012).</li>
+    <li><strong>Why it matters.</strong> Collision bounds decide how large hash outputs, IDs and nonces need to be. At a trillion guesses per second, the 50% point for a 256-bit space is about 10<sup>19</sup> years away, roughly a billion times the age of the universe.</li>
+  </ul>
+  <div class="figs"><figure><a href="assets/birthday-sweep.png"><img src="assets/birthday-sweep.png" width="1170" height="408" alt="Left: k versus b for both formulas. Right: constant difference of 0.231" loading="lazy"></a><figcaption>Left: the 50% collision point k versus b for the exact-root solver and the closed form, up to b = 4&times;10<sup>36</sup>. Right: their difference is a constant 0.231 (ln&nbsp;2&nbsp;/&nbsp;3) at every b.</figcaption></figure></div>
+  <div class="calc">
+    <div class="cap">Try it with the corrected formula (double precision, so about 15 digits)</div>
+    <label>Output size in bits<input id="bits" type="number" min="8" max="512" value="256"></label>
+    <label>Guesses per second<input id="rate" type="number" min="1" value="1000000000000"></label>
+    <p id="calcout" aria-live="polite"></p>
+  </div>
+  <p><a href="https://github.com/kibnakamoto">Code and paper</a> (Python, mpmath, multiprocessing, LaTeX)</p>
+</section>
+
+<section id="opensource">
+  <h2 class="s">Open-source contributions</h2>
+  <div class="prow"><div><a href="https://github.com/nasa/CryptoLib/pulls?q=is%3Apr+author%3Akibnakamoto">NASA CryptoLib</a></div><p>Fixed memory leaks and logic errors and improved maintainability in NASA's spacecraft-link cryptography library.</p><span class="res m">C</span></div>
+  <div class="prow"><div><strong>W4AF</strong></div><p>Resolved build issues and improved code quality in the web-application security framework.</p><span class="res m">Python</span></div>
+  <div class="prow"><div><strong>Completion tool</strong></div><p>Documentation updates and improvements.</p><span class="res m">Docs</span></div>
+</section>
+
+<section id="skills" class="skills">
+  <h2 class="s">Skills</h2>
+  <dl>
+    <dt>Languages</dt><dd>C/C++ (17–23), Python, Java, C#, Verilog, Bash</dd>
+    <dt>Systems</dt><dd>Linux/Unix, memory management, concurrency, TCP/UDP/IP, GDB, Valgrind, test automation</dd>
+    <dt>Hardware and controls</dt><dd>Motor characterization, ABZ and sin/cos encoders, high-power wiring, Yokogawa power analyzers, industrial motor controllers</dd>
+    <dt>Tools</dt><dd>Git, GNU Make, Docker, Qt/PySide6, NumPy, Pandas, Matplotlib, Quartus Prime, LaTeX</dd>
+  </dl>
+</section>
+
+<section>
+  <h2 class="s">Education</h2>
+  <div class="item"><div class="when">2025 – 2030</div><div><h3>BASc Computer Engineering, Honours, Co-op</h3><p class="tag">University of Waterloo</p><p>President's Scholarship of Distinction, Dean's Global Distinction Award, Engineering International Scholar Award.</p></div></div>
+</section>
+</main>
+
+<footer id="contact">
+  <p>Want to talk? <a href="mailto:tcanturk@uwaterloo.ca">tcanturk@uwaterloo.ca</a></p>
+</footer>
+</div>
+
+<script>
+//CIPHER-START
+// Full-Time-Pad v2.0 key transformation (little-endian build), ported from fulltimepad.cpp
+var R=[23,5,17,31,13];
+var NV={0:[15,11,7,3,31,27,23,19,14,10,6,2,30,26,22,18,13,9,5,1,29,25,21,17,12,8,4,0,28,24,20,16],
+        4:[30,14,31,15,28,12,29,13,18,2,19,3,16,0,17,1,22,6,23,7,20,4,21,5,26,10,27,11,24,8,25,9]};
+var K={m:0x119f904f,n:0x73d44db5,o:0x3918fa83,q:0x5546b403,s:0x216c46df,t:0x64997dfd};
+var N="abcdefgh".split("");
+// [a,b,c,d, j,l, e,f,g,h, rotation index, permutation row after (or -1)]
+var STEPS=[
+ ["a","b","c","d","j","l","e","f","g","h",0,0],
+ ["e","f","g","h","l","m","a","b","c","d",1,-1],
+ ["a","b","c","d","m","n","e","f","g","h",2,-1],
+ ["e","f","g","h","n","o","a","b","c","d",3,-1],
+ ["a","b","c","d","o","q","e","f","g","h",4,4],
+ ["e","f","g","h","q","s","a","b","c","d",0,-1],
+ ["a","b","c","d","s","t","e","f","g","h",1,-1],
+ ["e","f","g","h","t","j","a","b","c","d",2,-1],
+ ["a","b","c","d","j","l","e","f","g","h",3,-1],
+ ["e","f","g","h","l","m","a","b","c","d",4,-1]];
+function rotr(x,n){return((x>>>n)|(x<<(32-n)))>>>0}
+function rotl(x,n){return((x<<n)|(x>>>(32-n)))>>>0}
+function words(kb){var w=[],i;for(i=0;i<32;i+=4)w.push((kb[i]|kb[i+1]<<8|kb[i+2]<<16|kb[i+3]<<24)>>>0);return w}
+function toBytes(w){var o=[],i;for(i=0;i<8;i++)o.push(w[i]&255,(w[i]>>>8)&255,(w[i]>>>16)&255,w[i]>>>24);return o}
+// returns the 32-byte state after load and after each of the 10 iterations
+function trace(key,idx){
+  var kb=[],v={},i;
+  for(i=0;i<32;i+=4)kb.push(key[i+3],key[i+2],key[i+1],key[i]); // endian_8_to_32_arr
+  function load(){var w=words(kb);N.forEach(function(n,x){v[n]=w[x]})}
+  function cur(){return toBytes(N.map(function(n){return v[n]}))}
+  load();
+  v.j=Math.floor(idx/4294967296)>>>0;v.l=idx>>>0;
+  for(i in K)v[i]=K[i];
+  var snaps=[cur()];
+  STEPS.forEach(function(s){
+    var A=s[0],B=s[1],C=s[2],D=s[3],J=s[4],L=s[5],E=s[6],F=s[7],G=s[8],H=s[9],r=R[s[10]];
+    v[A]=(v[A]+rotr(v[A],r)+v[J])>>>0;
+    var sum=(v[A]+v[B]+v[C]+v[D]+v[E]+v[F]+v[G]+v[H])>>>0;
+    v[L]=Math.imul(v[L],sum)>>>0;
+    v[B]=(v[B]+v[L]+rotl(v[B],r))>>>0;
+    v[J]=(v[J]^v[B])>>>0;
+    v[C]=(v[C]^v[J])>>>0;
+    v[D]=(v[D]^v[J])>>>0;
+    if(s[11]>=0){var c=cur();kb=NV[s[11]].map(function(x){return c[x]});load()} // dynamic_permutation
+    snaps.push(cur());
+  });
+  return snaps;
+}
+//CIPHER-END
+(function(){
+  var KEY=[],i,T,step,sel=document.getElementById("target");
+  for(i=0;i<32;i++)KEY.push(i);
+  var pop=function(x){var n=0;while(x){n+=x&1;x>>>=1}return n};
+  var hex=function(x){return("0"+x.toString(16)).slice(-2)};
+  var hex8=function(x){return("0000000"+(x>>>0).toString(16)).slice(-8)};
+  function draw(){
+    var a=T[0][step],b=T[1][step],bits=0,ra=document.getElementById("rowA"),rb=document.getElementById("rowB"),w,x;
+    ra.innerHTML=rb.innerHTML="";
+    document.getElementById("out").textContent=step==10?"Keystream block for key A, as bytes (what transform() returns for zeros, index 0): "+a.map(hex).join(""):"";
+    for(w=0;w<32;w+=4){
+      var da=0,ta="",tb="";
+      var wa=words(a)[w/4],wb=words(b)[w/4];da=pop(wa^wb);ta=hex8(wa);tb=hex8(wb);
+      bits+=da;
+      var sa=document.createElement("span"),sb=document.createElement("span");
+      sa.textContent=ta;sb.textContent=tb;
+      if(da){sa.className=sb.className="d"}
+      ra.appendChild(sa);rb.appendChild(sb);
+    }
+    document.getElementById("meta").textContent=(step?"Iteration "+step+" of 10"+(step==1||step==5?" (then byte permutation)":""):"Key loaded")+": "+bits+" of 256 bits differ";
+  }
+  function reset(){
+    var k2=KEY.slice(),i2=0;
+    if(sel.value==="key")k2[0]^=1;else i2=1;
+    T=[trace(KEY,0),trace(k2,i2)];step=0;draw();
+  }
+  document.getElementById("step").onclick=function(){if(step<10){step++;draw()}};
+  document.getElementById("all").onclick=function(){step=10;draw()};
+  document.getElementById("reset").onclick=reset;
+  sel.onchange=reset;
+  reset();
+  var bi=document.getElementById("bits"),ri=document.getElementById("rate"),co=document.getElementById("calcout");
+  function calc(){
+    var n=+bi.value,r=+ri.value,L=Math.LN2;
+    if(!(n>=8&&n<=512&&r>0)){co.textContent="Enter 8 to 512 bits and a positive rate.";return}
+    var k=0.5+Math.sqrt(0.25+2*L*Math.pow(2,n))-L/3,sec=k/r;
+    co.textContent="50% collision chance after about "+k.toExponential(3)+" samples ("+(k/Math.pow(2,n/2)).toFixed(4)+" \u00d7 2^"+(n/2)+"), which takes "+sec.toExponential(2)+" seconds, or "+(sec/31557600).toExponential(2)+" years, at that rate.";
+  }
+  bi.oninput=ri.oninput=calc;calc();
+  var root=document.documentElement,btn=document.getElementById("theme");
+  btn.onclick=function(){
+    var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+    root.setAttribute("data-theme",dark?"light":"dark");
+  };
+})();
+</script>
+</body>
+</html>
